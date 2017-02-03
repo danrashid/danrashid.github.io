@@ -6,32 +6,53 @@
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 <style type="text/css">
 
-html, body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
+html {
+  background: cornflowerblue;
 }
 body {
   font: 1em/2em Helvetica, sans-serif;
-  background: #f7cbff url('dAJTG.gif') left bottom no-repeat;
-  padding-bottom: 250px;
+  width: 30em;
+  margin: auto;
+  text-align: center;
 }
 body, a {
-  color: #333;
+  color: #fff;
 }
-a:hover {
-  color: #000;
+a:hover, .dim {
+  color: #ddd;
 }
-p, ul {
-  width: 24em;
-  margin: 2em auto;
+p {
+  margin: 2em 0;
 }
-ul {
-  list-style: none;
-  padding: 0;
+.ring {
+  width: 20em;
+  height: 20em;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  position: relative;
+  left: 5em;
 }
-.dim {
-  color: #AD8EB2;
+@keyframes circle {
+  0%, 75%, 100% {
+    width: 6em;
+    height: 6em;
+    margin: -3em 0 0 -3em;
+    opacity: 1;
+  }
+  25%, 50% {
+    width: 20em;
+    height: 20em;
+    margin: -10em 0 0 -10em;
+    opacity: .5;
+  }
+}
+.circle {
+  background: #ddd;
+  border-radius: 100%;
+  animation: circle 16s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 </style>
@@ -51,7 +72,11 @@ ul {
 </head>
 
 <body>
-<p>Dan Rashid is a front end engineer in Mandeville, LA who works remotely for <a href="http://www.signal.co/">Signal</a> <span class="dim"><small>FKA</small> BrightTag.</span></p>
-<p>I’m danrashid on Gmail.</p>
+<p>Dan Rashid is a senior web software engineer near New Orleans who works remotely for <a href="http://www.signal.co/">Signal</a> <span class="dim"><small>FKA</small> BrightTag.</span></p>
+<p>If you’d like to reach me, I’m danrashid on iCloud.</p>
+<div class="ring">
+  <div class="circle"></div>
+</div>
+<p><small><a href="http://quietkit.com/box-breathing/">What is that?</a></small></p>
 </body>
 </html>
