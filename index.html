@@ -1,82 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>Dan Rashid</title>
-<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<style type="text/css">
+  <meta charset="utf-8">
+  <title>Dan Rashid</title>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <style type="text/css">
+    body {
+      background-image: url('Raco-Boutang.jpg');
+      background-size: 100% auto;
+      color: #e5e5e5;
+      font: 1.25em monospace;
+      font-weight: bold;
+      margin: 0;
+      padding: 5em;
+    }
 
-html {
-  background: cornflowerblue;
-}
-body {
-  font: 1em/2em Helvetica, sans-serif;
-  width: 30em;
-  margin: auto;
-  text-align: center;
-}
-body, a {
-  color: #fff;
-}
-a:hover {
-  color: #ddd;
-}
-p {
-  margin: 2em 0;
-}
-.ring {
-  width: 20em;
-  height: 20em;
-  border: 1px solid #ddd;
-  border-radius: 100%;
-  position: relative;
-  left: 5em;
-}
-@keyframes circle {
-  0%, 75%, 100% {
-    width: 6em;
-    height: 6em;
-    margin: -3em 0 0 -3em;
-    opacity: 1;
-  }
-  25%, 50% {
-    width: 20em;
-    height: 20em;
-    margin: -10em 0 0 -10em;
-    opacity: .5;
-  }
-}
-.circle {
-  background: #ddd;
-  border-radius: 100%;
-  animation: circle 16s infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
+    p {
+      margin: 2em;
+    }
 
-</style>
-<script type="text/javascript">
+    span {
+      background: black;
+      padding: .5em 1em;
+    }
+  </style>
+  <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-8926782-1']);
-  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8926782-1']);
+    _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-</script>
+  </script>
 </head>
 
 <body>
-<p>Dan Rashid is a senior web software engineer near New Orleans.</p>
-<p>If you’d like to reach me, I’m danrashid on iCloud.</p>
-<div class="ring">
-  <div class="circle"></div>
-</div>
-<p><small><a href="http://quietkit.com/box-breathing/">What is that?</a></small></p>
+  <p style="transform: rotate(-.2deg);">
+    <span>Dan Rashid is a front-end web software architect near New Orleans</span>
+  </p>
+  <p style="transform: rotate(.2deg); margin-left: 4em">
+    <span style="padding-right: 2em">He can be reached at dan@ this domain</span>
+  </p>
 </body>
+
 </html>
