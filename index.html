@@ -15,28 +15,59 @@
         padding: 5vw 0 0 5vw;
       }
 
-      p {
+      body > p {
         margin: 2em;
       }
 
       strong {
         background: black;
+        padding: .3125em .5625em;
         text-shadow: 0 0 0.125em #999;
+      }
+
+      section {
+        background: rgba(0, 0, 0, 0.666);
+        padding: 1px 1em;
+        margin: -1px auto;
+      }
+
+      h1,
+      h3 {
+        font-weight: normal;
       }
     </style>
   </head>
 
   <body>
     <p style="transform: rotate(-.2deg);">
-      <strong style="padding: .5em 1em"
+      <strong
         >Dan Rashid is a front-end web software architect near New
         Orleans</strong
       >
     </p>
     <p style="transform: rotate(.2deg); margin-left: 4em">
-      <strong style="padding: .5em 1.75em .5em 1.25em"
+      <strong style="padding-right: 1.75em; padding-left: 1.25em"
         >He can be reached at dan@ this domain</strong
       >
     </p>
+    <section>
+      <h1>
+        Installing KVM, virt-manager, and spice viewer on Linux Mint 19.1 Tessa
+      </h1>
+      <h3>Why? And why not VirtualBox?</h3>
+      <ol>
+        <li>Kicks</li>
+      </ol>
+      <p>
+        Replacing (Mint’s default) <strong>ufw</strong> with (the more complicated) <strong>firewalld</strong> makes
+        KVM setup easier, so we’ll go with that.
+      </p>
+      <p><pre>$ sudo apt remove gufw ufw
+$ sudo apt install firewalld firewall-config qemu-kvm libvirt-daemon-system \
+  libvirt-clients bridge-utils virt-viewer virt-manager qemu-utils \
+  gir1.2-spiceclientgtk-3.0</pre></p>
+      <p>After that, reboot, open the Virtual Machine Manager GUI, and set:<br \>Edit > Connection Details > default > Set Autostart: On Boot</p>
+      <p>Reboot again and make some VMs</p>
+    </section>
   </body>
 </html>
