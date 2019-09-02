@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>dates</title>
+    <style>
+      body {
+        background: black;
+        font-family: sans-serif;
+        color: gainsboro;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+      }
+      h1 {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <template>
+      <div>
+        <h1></h1>
+        <p></p>
+      </div>
+    </template>
+
+    <script>
+      var DAY_IN_MS = 1000 * 60 * 60 * 24;
+      var template = document.querySelector("template");
+      var now = Date.now();
+
+      // Example: ?2019-11-28=Thanksgiving&2019-12-25=Christmas
+
+      window.location.search
+        .slice(1)
+        .split("&")
+        .forEach(function(pair) {
+          var parts = pair.split("=").map(decodeURIComponent);
+          var node = document.importNode(template.content, true);
+          var date = new Date(parts[0]).valueOf();
+          var days = Math.round((date - now) / DAY_IN_MS);
+
+          node.querySelector("h1").textContent = days.toLocaleString();
+          node.querySelector("p").textContent = parts[1];
+
+          document.body.appendChild(node);
+        });
+    </script>
+  </body>
+</html>
