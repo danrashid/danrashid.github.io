@@ -58,7 +58,7 @@
       </strong>
     </p>
     <section>
-      <h1>Separating the front (headphone) and back (line-in) audio jacks on an ALC892 audio chip in Linux</h1>
+      <h1>Separating the front (headphone) and back (line-in) jacks on an ALC892 audio chip in Linux</h1>
       <p>Specific, eh? Needed this for my MSI Z370-A-PRO motherboard, so my headphones and speakers could be treated as separate outputs. By default, having headphones plugged in (front) will disable the speakers (in back). I like to leave both plugged in and toggle them via software.</p>
       <p>In <strong>/etc/udev/rules.d/jackdetect.rules</strong> add:</p>
       <p><pre>ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
