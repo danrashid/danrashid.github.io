@@ -9,7 +9,7 @@
         background-color: #646d68;
         background-image: url("Raco-Boutang.jpg");
         background-size: cover;
-        font: 1.25em/1.5em monospace;
+        font: 1.125em/1.375em monospace;
         margin: 0;
         padding: 5vw 0 0 5vw;
       }
@@ -18,19 +18,25 @@
         color: #e5e5e5;
       }
 
+      a:hover {
+        color: orange;
+      }
+
       body > p {
         margin: 2em;
       }
 
       strong {
         background: black;
+        font-weight: normal;
         padding: .3125em .5625em;
       }
 
       section {
         background: rgba(0, 0, 0, 0.8);
         padding: 1em 2em;
-        margin: 2em auto;
+        margin: 2em 0 2em 2em;
+        max-width: 60em;
       }
 
       h1 {
@@ -58,21 +64,21 @@
       </strong>
     </p>
     <section>
-      <h1>🤫</h1>
+      <h1>📻 💾 🤫</h1>
       <p><a href="https://github.com/danrashid/brownies">https://github.com/danrashid/brownies</a></p>
     </section>
     <section>
       <h1>Separating the front (headphone) and back (line-in) jacks on an ALC892 audio chip in Linux</h1>
       <p>Specific, eh? Needed this for my MSI Z370-A-PRO motherboard, so my headphones and speakers could be treated as separate outputs. By default, having headphones plugged in (front) will disable the speakers (in back). I like to leave both plugged in and toggle them via software.</p>
-      <p>In <strong>/etc/udev/rules.d/jackdetect.rules</strong> add:</p>
-      <p><pre>ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
-ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1"</pre></p>
-      <p>In <strong>/usr/share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf</strong> replace:</p>
-      <p><pre>[Element Front]
--switch = mute
--volume = zero
-+switch = off
-+volume = off</pre></p>
+      <p>In /etc/udev/rules.d/jackdetect.rules, add:</p>
+      <p><pre>  ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
+  ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1"</pre></p>
+      <p>In /usr/share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf, replace:</p>
+      <p><pre>  [Element Front]
+  -switch = mute
+  -volume = zero
+  +switch = off
+  +volume = off</pre></p>
         <p>Credits:</p>
         <ul>
           <li><a href="https://unix.stackexchange.com/a/542634">https://unix.stackexchange.com/a/542634</a></li>
@@ -81,22 +87,16 @@ ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1
     </section>
     <section>
       <h1>
-        Installing KVM, virt-manager, and spice viewer on Linux Mint 19.1 Tessa
+        Installing KVM with a GUI on Linux Mint 19.3 Tricia
       </h1>
-      <p>Why? And why not VirtualBox?</p>
-      <ol>
-        <li>Kicks</li>
-      </ol>
-      <p>
-        Replacing (Mint’s default) <strong>ufw</strong> with (the more complicated) <strong>firewalld</strong> makes
-        KVM setup easier, so we’ll go with that.
-      </p>
-      <p><pre>$ sudo apt remove gufw ufw
-$ sudo apt install firewalld firewall-config qemu-kvm libvirt-daemon-system \
-  libvirt-clients bridge-utils virt-viewer virt-manager qemu-utils \
+      <p><pre>$ sudo apt install virt-manager \
+  qemu-kvm \
+  libvirt-bin \
+  ebtables \
+  dnsmasq \
+  qemu-utils \
   gir1.2-spiceclientgtk-3.0</pre></p>
-      <p>After that, reboot, open the Virtual Machine Manager GUI, and set:<br \>Edit > Connection Details > default > Set Autostart: On Boot</p>
-      <p>Reboot again and make some VMs</p>
+      <p>Reboot and make some VMs</p>
     </section>
   </body>
 </html>
