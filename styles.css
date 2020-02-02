@@ -1,0 +1,80 @@
+body {
+  background-color: #646d68;
+  background-image: url("Raco-Boutang.jpg");
+  background-size: cover;
+  font: 1.125em/1.375em monospace;
+  margin: 0;
+  padding: 5vw 0 0 5vw;
+}
+
+body,
+a {
+  color: #e5e5e5;
+}
+
+a:hover {
+  color: orange;
+}
+
+body > p {
+  margin: 2em;
+}
+
+h1,
+strong {
+  font-weight: normal;
+  line-height: normal;
+}
+
+strong,
+pre,
+#timeline > div > div {
+  padding: 0.5em 1em;
+}
+
+strong,
+pre {
+  background: black;
+}
+
+section,
+pre,
+#timeline > div > div {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+section,
+#timeline > div > div {
+  box-sizing: border-box;
+}
+
+section {
+  padding: 0.75em 1.5em;
+  margin: 2em;
+  max-width: 60em;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+#timeline > div {
+  position: relative;
+}
+
+#timeline > div > div {
+  float: left;
+  margin: 1px 0 0 1px;
+  position: sticky;
+  left: 0;
+}
+
+#timeline > div:first-child > div {
+  position: static;
+  text-align: right;
+}
+
+#timeline > div > div:first-child {
+  clear: left;
+  margin-left: 0;
+}

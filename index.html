@@ -4,50 +4,7 @@
     <meta charset="utf-8" />
     <title>🕷 Dan Rashid</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <style>
-      body {
-        background-color: #646d68;
-        background-image: url("Raco-Boutang.jpg");
-        background-size: cover;
-        font: 1.125em/1.375em monospace;
-        margin: 0;
-        padding: 5vw 0 0 5vw;
-      }
-
-      body, a {
-        color: #e5e5e5;
-      }
-
-      a:hover {
-        color: orange;
-      }
-
-      body > p {
-        margin: 2em;
-      }
-
-      strong {
-        background: black;
-        font-weight: normal;
-        padding: .3125em .5625em;
-      }
-
-      section {
-        background: rgba(0, 0, 0, 0.8);
-        padding: 1em 2em;
-        margin: 2em 0 2em 2em;
-        max-width: 60em;
-      }
-
-      h1 {
-        font-weight: normal;
-        line-height: normal;
-      }
-
-      pre {
-        overflow-x: auto;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -67,6 +24,51 @@
         What you see here is intentionally ugly
       </strong>
     </p>
+    <section style="background: none; overflow-x: auto; padding: 0;">
+      <div id="timeline">
+        <div>
+          <div data-months="6">2020</div>
+          <div data-months="12">2019</div>
+          <div data-months="12">2018</div>
+          <div data-months="12">2017</div>
+          <div data-months="12">2016</div>
+          <div data-months="12">2015</div>
+          <div data-months="12">2014</div>
+          <div data-months="12">2013</div>
+          <div data-months="12">2012</div>
+          <div data-months="12">2011</div>
+          <div data-months="12">2010</div>
+          <div data-months="12">2009</div>
+          <div data-months="12">2008</div>
+          <div data-months="12">2007</div>
+          <div data-months="12">2006</div>
+          <div data-months="12">2005</div>
+        </div>
+        <div>
+          <div data-months="39">VeriForce</div>
+          <div data-months="48">Signal</div>
+          <div data-months="4">Barcodes</div>
+          <div data-months="32">Gorilla</div>
+          <div data-months="18">LOK</div>
+          <div data-months="7">Freelance</div>
+          <div data-months="6">Werremeyer</div>
+          <div data-months="12">Cohesion</div>
+          <div data-months="11">McCann</div>
+          <div data-months="4">Hughes</div>
+          <div data-months="5">Wash U</div>
+        </div>
+        <div>
+          <div data-months="54">Mandeville</div>
+          <div data-months="10">New Orleans</div>
+          <div data-months="34">Chicago</div>
+          <div data-months="20">St. Louis</div>
+          <div data-months="30">Baton Rouge</div>
+          <div data-months="18">St. Louis</div>
+          <div data-months="11">Detroit</div>
+          <div data-months="9">St. Louis</div>
+        </div>
+      </div>
+    </section>
     <section>
       <h1>📻 💾 🤫</h1>
       <p><a href="https://github.com/danrashid/brownies">https://github.com/danrashid/brownies</a></p>
@@ -75,14 +77,14 @@
       <h1>Separating the front (headphone) and back (line-in) jacks on an ALC892 audio chip in Linux</h1>
       <p>Specific, eh? Needed this for my MSI Z370-A-PRO motherboard, so my headphones and speakers could be treated as separate outputs. By default, having headphones plugged in (front) will disable the speakers (in back). I like to leave both plugged in and toggle them via software.</p>
       <p>In /etc/udev/rules.d/jackdetect.rules, add:</p>
-      <p><pre>  ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
-  ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1"</pre></p>
+      <p><pre>ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
+ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1"</pre></p>
       <p>In /usr/share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf, replace:</p>
-      <p><pre>  [Element Front]
-  -switch = mute
-  -volume = zero
-  +switch = off
-  +volume = off</pre></p>
+      <p><pre>[Element Front]
+-switch = mute
+-volume = zero
++switch = off
++volume = off</pre></p>
         <p>Credits:</p>
         <ul>
           <li><a href="https://unix.stackexchange.com/a/542634">https://unix.stackexchange.com/a/542634</a></li>
@@ -102,5 +104,6 @@
   gir1.2-spiceclientgtk-3.0</pre></p>
       <p>Reboot and make some VMs</p>
     </section>
+    <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
