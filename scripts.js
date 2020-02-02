@@ -1,5 +1,5 @@
 var timelineWidth = 0;
-var timelineScale = 30;
+var timelineScale = 25;
 
 document
   .querySelectorAll("#timeline > div:first-child > div")
