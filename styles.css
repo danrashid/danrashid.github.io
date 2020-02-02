@@ -58,23 +58,14 @@ pre {
   overflow-x: auto;
 }
 
-#timeline > div {
-  position: relative;
-}
-
 #timeline > div > div {
   float: left;
-  margin: 1px 0 0 1px;
+  border-left: 1px solid #646d68;
+  margin-top: 1px;
   position: sticky;
   left: 0;
 }
 
-#timeline > div:first-child > div {
-  position: static;
-  text-align: right;
-}
-
 #timeline > div > div:first-child {
   clear: left;
-  margin-left: 0;
 }

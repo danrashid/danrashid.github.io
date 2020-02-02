@@ -1,4 +1,4 @@
-var timelineWidth = -1;
+var timelineWidth = 0;
 var timelineScale = 30;
 
 document
@@ -10,5 +10,5 @@ document
 document.getElementById("timeline").style.width = timelineWidth + "px";
 
 document.querySelectorAll("#timeline > div > div").forEach(function(div) {
-  div.style.width = div.dataset.months * timelineScale - 1 + "px";
+  div.style.width = div.dataset.months * timelineScale + "px";
 });
