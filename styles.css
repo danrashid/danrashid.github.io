@@ -3,45 +3,40 @@ a {
   color: #dfdfdf;
 }
 
+strong,
+#date {
+  color: white;
+}
+
 body {
   background: #202020;
-  font: 0.875em/1.625em sans-serif;
+  font: 0.875em/1.5em sans-serif;
+  margin: 0;
+  padding: 1.5em;
 }
 
 a:hover {
-  color: peachpuff;
+  color: orange;
 }
 
-.wonderline {
-  text-decoration: none;
-}
-
-dt,
-footer {
-  margin: 2em 1.5em 0;
+strong {
+  font-weight: normal;
 }
 
 #timeline {
   display: flex;
-  overflow-y: auto;
-}
-
-#timeline div {
-  box-sizing: border-box;
-}
-
-#timeline > div:first-child {
-  text-align: right;
-}
-
-#timeline > div:not(:first-child) {
-  border-left: 1px solid #606060;
+  margin: 3em 0;
 }
 
 #timeline div div {
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #202020;
   padding: 0.25em 0.375em;
 }
 
-#timeline div div:not(:first-child) {
-  border-top: 1px solid #606060;
+footer {
+  text-align: center;
 }

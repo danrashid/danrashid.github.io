@@ -4,7 +4,7 @@ set -e
 YEAR=`date +%Y`
 DATE=`date`
 
-sed -i "s/__YEAR__/$YEAR/" index.html
-sed -i "s/__DATE__/$DATE/" index.html
+sed -i "s/ id=\"year\">.*<\// id=\"year\">$YEAR<\//" index.html
+sed -i "s/ id=\"date\">.*<\// id=\"date\">$DATE<\//" index.html
 
 git add index.html
