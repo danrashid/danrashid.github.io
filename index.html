@@ -8,102 +8,101 @@
   </head>
 
   <body>
-    <p style="transform: rotate(-.2deg);">
-      <strong
-        >Dan Rashid is a front-end web software architect near New
-        Orleans</strong
-      >
-    </p>
-    <p style="transform: rotate(.2deg); margin-left: 4em">
-      <strong style="padding-right: 1.75em; padding-left: 1.25em"
-        >He can be reached at dan@ this domain</strong
-      >
-    </p>
-    <p style="margin-left: 3em;">
-      <strong>
-        What you see here is intentionally ugly
-      </strong>
-    </p>
-    <section style="background: none; overflow-x: auto; padding: 0;">
-      <div id="timeline">
-        <div>
-          <div data-months="6">2020</div>
-          <div data-months="12">2019</div>
-          <div data-months="12">2018</div>
-          <div data-months="12">2017</div>
-          <div data-months="12">2016</div>
-          <div data-months="12">2015</div>
-          <div data-months="12">2014</div>
-          <div data-months="12">2013</div>
-          <div data-months="12">2012</div>
-          <div data-months="12">2011</div>
-          <div data-months="12">2010</div>
-          <div data-months="12">2009</div>
-          <div data-months="12">2008</div>
-          <div data-months="12">2007</div>
-          <div data-months="12">2006</div>
-          <div data-months="12">2005</div>
-        </div>
-        <div>
-          <div data-months="39"><a href="https://www.veriforce.com/">VeriForce</a></div>
-          <div data-months="48"><a href="https://www.signal.co/">Signal</a></div>
-          <div data-months="4"><a href="https://www.barcodesinc.com/">Barcodes</a></div>
-          <div data-months="32"><a href="https://www.gorilla76.com/">Gorilla 76</a></div>
-          <div data-months="18">Louisiana Outdoor Kitchens</div>
-          <div data-months="7">Freelance</div>
-          <div data-months="6"><a href="https://werremeyer.com/">Werremeyer</a></div>
-          <div data-months="12"><a href="https://cohesioncompany.com/">Cohesion</a></div>
-          <div data-months="11"><a href="http://mccanndetroit.com/">McCann</a></div>
-          <div data-months="4"><a href="https://hlkagency.com/">Hughes</a></div>
-          <div data-months="5"><a href="https://wustl.edu/">Wash U</a></div>
-        </div>
-        <div>
-          <div data-months="54">Mandeville</div>
-          <div data-months="10">New Orleans</div>
-          <div data-months="34">Chicago</div>
-          <div data-months="20">St. Louis</div>
-          <div data-months="30">Baton Rouge</div>
-          <div data-months="18">St. Louis</div>
-          <div data-months="11">Detroit</div>
-          <div data-months="9">St. Louis</div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <p>📻 💾 🤫 <a href="https://github.com/danrashid/brownies">https://github.com/danrashid/brownies</a></p>
-    </section>
-    <section>
-      <h1>Separating the front (headphone) and back (line-in) jacks on an ALC892 audio chip in Linux</h1>
-      <p>Specific, eh? Needed this for my MSI Z370-A-PRO motherboard, so my headphones and speakers could be treated as separate outputs. By default, having headphones plugged in (front) will disable the speakers (in back). I like to leave both plugged in and toggle them via software.</p>
-      <p>In /etc/udev/rules.d/jackdetect.rules, add:</p>
-      <p><pre>ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{hints}="jack_detect=false"
-ACTION=="add", SUBSYSTEM=="sound", ATTRS{chip_name}=="ALC892", ATTR{reconfig}="1"</pre></p>
-      <p>In /usr/share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf, replace:</p>
-      <p><pre>[Element Front]
--switch = mute
--volume = zero
-+switch = off
-+volume = off</pre></p>
-        <p>Credits:</p>
-        <ul>
-          <li><a href="https://unix.stackexchange.com/a/542634">https://unix.stackexchange.com/a/542634</a></li>
-          <li><a href="https://bugs.freedesktop.org/show_bug.cgi?id=92679#c2">https://bugs.freedesktop.org/show_bug.cgi?id=92679#c2</a></li>
-        </ul>
-    </section>
-    <section>
-      <h1>
-        Installing KVM with a GUI on Linux Mint 19.3 Tricia
-      </h1>
-      <p><pre>$ sudo apt install virt-manager \
-  qemu-kvm \
-  libvirt-bin \
-  ebtables \
-  dnsmasq \
-  qemu-utils \
-  gir1.2-spiceclientgtk-3.0 \
-  ovmf</pre></p>
-      <p>Reboot and make some VMs</p>
-    </section>
-    <script type="text/javascript" src="scripts.js"></script>
+    <main>
+      <dl>
+        <dt>Dan Rashid</dt>
+        <dd>is a front-end web software architect near New Orleans</dd>
+        <dt>He’s been at it for a while now</dt>
+        <dd>
+          evaluating, planning, prototyping, reviewing, mentoring, interviewing
+        </dd>
+        <dd>
+          still thankfully writing code (React and TypeScript lately)
+        </dd>
+        <dd>missing the quirky old web, but embracing the new</dd>
+        <dt>He’s checked out of social media</dt>
+        <dd>
+          but sporadically pushes things to
+          <a href="https://github.com/danrashid">GitHub</a>
+        </dd>
+        <dt>
+          What you see is intentionally basic and
+          <a href="https://github.com/danrashid/danrashid.github.io"
+            >tracker-free</a
+          >
+        </dt>
+        <dd>
+          though please,
+          <a href="mailto:hi@danrashid.com" class="wonderline"
+            ><u>say “hi!</u>”</a
+          >
+        </dd>
+        <dt>A brief history</dt>
+        <dd id="timeline">
+          <div>
+            <div style="height: 60px;">2020</div>
+            <div style="height: 120px;">2019</div>
+            <div style="height: 120px;">2018</div>
+            <div style="height: 120px;">2017</div>
+            <div style="height: 120px;">2016</div>
+            <div style="height: 120px;">2015</div>
+            <div style="height: 120px;">2014</div>
+            <div style="height: 120px;">2013</div>
+            <div style="height: 120px;">2012</div>
+            <div style="height: 120px;">2011</div>
+            <div style="height: 120px;">2010</div>
+            <div style="height: 120px;">2009</div>
+            <div style="height: 120px;">2008</div>
+            <div style="height: 120px;">2007</div>
+            <div style="height: 120px;">2006</div>
+            <div style="height: 120px;">2005</div>
+          </div>
+          <div>
+            <div style="height: 390px;">
+              <a href="https://www.veriforce.com/">VeriForce</a>
+            </div>
+            <div style="height: 480px;">
+              <a href="https://www.signal.co/">Signal</a>
+            </div>
+            <div style="height: 40px;">
+              <a href="https://www.barcodesinc.com/">Barcodes</a>
+            </div>
+            <div style="height: 320px;">
+              <a href="https://www.gorilla76.com/">Gorilla 76</a>
+            </div>
+            <div style="height: 180px;">Louisiana Outdoor Kitchens</div>
+            <div style="height: 70px;">Freelance</div>
+            <div style="height: 60px;">
+              <a href="https://werremeyer.com/">Werremeyer</a>
+            </div>
+            <div style="height: 120px;">
+              <a href="https://cohesioncompany.com/">Cohesion</a>
+            </div>
+            <div style="height: 110px;">
+              <a href="http://mccanndetroit.com/">McCann</a>
+            </div>
+            <div style="height: 40px;">
+              <a href="https://hlkagency.com/">Hughes</a>
+            </div>
+            <div style="height: 50px;">
+              <a href="https://wustl.edu/">Wash U</a>
+            </div>
+          </div>
+          <div>
+            <div style="height: 540px;">Mandeville</div>
+            <div style="height: 100px;">New Orleans</div>
+            <div style="height: 340px;">Chicago</div>
+            <div style="height: 200px;">St. Louis</div>
+            <div style="height: 300px;">Baton Rouge</div>
+            <div style="height: 180px;">St. Louis</div>
+            <div style="height: 110px;">Detroit</div>
+            <div style="height: 90px;">St. Louis</div>
+          </div>
+        </dd>
+      </dl>
+    </main>
+    <footer>
+      © 2001-2020 Dan Rashid. All rights reserved. Last updated: Sat May 16 21:52:40 CDT 2020
+    </footer>
   </body>
 </html>

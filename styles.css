@@ -1,71 +1,47 @@
-body {
-  background-color: #646d68;
-  background-image: url("Raco-Boutang.jpg");
-  background-size: cover;
-  font: 1.125em/1.375em monospace;
-  margin: 0;
-  padding: 5vw 0 0 5vw;
-}
-
 body,
 a {
-  color: #e5e5e5;
+  color: #dfdfdf;
+}
+
+body {
+  background: #202020;
+  font: 0.875em/1.625em sans-serif;
 }
 
 a:hover {
-  color: orange;
+  color: peachpuff;
 }
 
-body > p {
-  margin: 2em;
+.wonderline {
+  text-decoration: none;
 }
 
-h1,
-strong {
-  font-weight: normal;
-  line-height: normal;
+dt,
+footer {
+  margin: 2em 1.5em 0;
 }
 
-strong,
-pre,
-#timeline > div > div {
-  padding: 0.5em 1em;
+#timeline {
+  display: flex;
+  overflow-y: auto;
 }
 
-strong,
-pre {
-  background: black;
-}
-
-section,
-pre,
-#timeline > div > div {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-section,
-#timeline > div > div {
+#timeline div {
   box-sizing: border-box;
 }
 
-section {
-  padding: 0.75em 1.5em;
-  margin: 2em;
-  max-width: 60em;
+#timeline > div:first-child {
+  text-align: right;
 }
 
-pre {
-  overflow-x: auto;
+#timeline > div:not(:first-child) {
+  border-left: 1px solid #606060;
 }
 
-#timeline > div > div {
-  float: left;
-  border-left: 1px solid #646d68;
-  margin-top: 1px;
-  position: sticky;
-  left: 0;
+#timeline div div {
+  padding: 0.25em 0.375em;
 }
 
-#timeline > div > div:first-child {
-  clear: left;
+#timeline div div:not(:first-child) {
+  border-top: 1px solid #606060;
 }

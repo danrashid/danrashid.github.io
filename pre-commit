@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+YEAR=`date +%Y`
+DATE=`date`
+
+sed -i "s/__YEAR__/$YEAR/" index.html
+sed -i "s/__DATE__/$DATE/" index.html
+
+git add index.html
