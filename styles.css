@@ -23,9 +23,22 @@ strong {
   font-weight: normal;
 }
 
+main {
+  margin: auto;
+  max-width: 40em;
+}
+
 #timeline {
   display: flex;
-  margin: 3em 0;
+  margin: 3em 0 1.5em;
+}
+
+#timeline > div:first-child {
+  flex: 1;
+}
+
+#timeline > div:not(:first-child) {
+  flex: 2;
 }
 
 #timeline div div {
