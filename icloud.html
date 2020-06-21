@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Email Link from Firefox to iCloud webmail</title>
+</head>
+
+<body>
+  <p>This is a script designed to let Firefox’s “Email Link…” function work with web-based iCloud Mail.</p>
+  <p>To enable it, click the [<u>A</u>dd Application] button in the top right.</p>
+  <p>You may <a href="https://github.com/danrashid/danrashid.github.io/blob/master/icloud.html">view the source of this
+      script</a>, but per <a href="https://github.com/danrashid/danrashid.github.io/blob/master/LICENSE">the LICENSE file in this repository</a>, <strong>no privacy guarantees are offered</strong>.</p>
+  <script>
+    var params = decodeURIComponent(location.search.slice(13));
+
+    if (params) {
+      location.assign('https://www.icloud.com/message/current/en-us/index.html#compose?' + params);
+    } else {
+      navigator.registerProtocolHandler('mailto', '?%s', 'danrashid.com/icloud');
+    }
+  </script>
+</body>
+
+</html>
