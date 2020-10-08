@@ -10,13 +10,8 @@ body {
   padding: 1.5em;
 }
 
-strong,
 a:hover {
   color: orange;
-}
-
-strong {
-  font-weight: normal;
 }
 
 main {
