@@ -32,21 +32,29 @@
       var template = document.querySelector("template");
       var now = Date.now();
 
-      // Example: ?2019-11-28=Thanksgiving&2019-12-25=Christmas
-
       window.location.search
         .slice(1)
         .split("&")
-        .forEach(function(pair) {
+        .every(function (pair) {
           var parts = pair.split("=").map(decodeURIComponent);
           var node = document.importNode(template.content, true);
           var date = new Date(parts[0]).valueOf();
           var days = Math.round((date - now) / DAY_IN_MS);
 
+          if (!date) {
+            console.error(
+              "Usage example: " +
+                window.location.origin +
+                window.location.pathname +
+                "?2021-11-25=Thanksgiving&2021-12-25=Christmas"
+            );
+          }
+
           node.querySelector("h1").textContent = days.toLocaleString();
           node.querySelector("p").textContent = parts[1];
-
           document.body.appendChild(node);
+
+          return Boolean(date);
         });
     </script>
   </body>
