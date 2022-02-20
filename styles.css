@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body,
 a {
   color: #dfdfdf;
@@ -5,9 +10,15 @@ a {
 
 body {
   background: #202020;
-  font: 0.875em/1.5em sans-serif;
+  font: 1em/1.5em sans-serif;
   margin: 0;
-  padding: 1.5em;
+  padding: 0 1.5em;
+}
+
+body,
+main {
+  flex-direction: column;
+  display: flex;
 }
 
 a:hover {
@@ -15,24 +26,10 @@ a:hover {
 }
 
 main {
+  flex: 1;
+  justify-content: center;
   margin: auto;
   max-width: 40em;
-}
-
-#timeline {
-  display: flex;
-  margin: 3em 0 1.5em;
-}
-
-#timeline div div {
-  box-sizing: border-box;
-  background-color: #373737;
-  border-width: 1px 1px 0 0;
-  border-style: solid;
-  border-color: #202020;
-  padding: 0.25em 0.375em;
-  position: sticky;
-  top: 0;
 }
 
 footer {
