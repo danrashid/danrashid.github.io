@@ -1,8 +1,0 @@
-#!/bin/sh
-set -e
-
-DATE=`date`
-
-sed -i '' -e "s/ id=\"date\">.*<\// id=\"date\">$DATE<\//" index.html
-
-git add index.html

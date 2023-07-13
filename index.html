@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dan Rashid</title>
+    <link href="favicon.ico?v=1" rel="shortcut icon" type="image/x-icon" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dan Rashid</title>
-  <link href="favicon.ico?v=1" rel="shortcut icon" type="image/x-icon" />
-  <link href="styles.css" rel="stylesheet" />
-</head>
+  <body>
+    <main>
+      <p>Dan Rashid is an experienced web developer.</p>
+      <p>
+        He’s been at it for a while now: evaluating, planning, prototyping,
+        reviewing, mentoring, interviewing; still thankfully writing code;
+        occasionally missing the quirky old web.
+      </p>
+      <p>
+        He’s let go of social media, but pushes things to
+        <a href="https://github.com/danrashid?tab=repositories">GitHub</a>
+        and placates
+        <a href="https://www.linkedin.com/in/danrashid/">LinkedIn</a>.
+      </p>
+      <p>
+        What you see is intentionally basic and
+        <a href="https://github.com/danrashid/danrashid.github.io"
+          >tracker-free</a
+        >, though please,
+        <a
+          href="mailto:dan@danrashid.com"
+          style="text-decoration: none"
+          title="dan@danrashid.com"
+          ><u>say “hi!</u>”</a
+        >
+      </p>
+    </main>
+    <footer>
+      <p>
+        <small>
+          © 2001 Dan Rashid<br />
+          <span id="date"></span>
+        </small>
+      </p>
+    </footer>
+    <script type="module">
+      try {
+        const { headers } = await fetch("/");
+        const date = new Date(headers.get("last-modified"));
 
-<body>
-  <main>
-    <p>Dan Rashid is an experienced web developer.</p>
-    <p>
-      He’s been at it for a while now: evaluating, planning, prototyping,
-      reviewing, mentoring, interviewing; still thankfully writing code;
-      occasionally missing the quirky old web.
-    </p>
-    <p>
-      He’s let go of social media, but pushes things to
-      <a href="https://github.com/danrashid?tab=repositories">GitHub</a>
-      and placates <a href="https://www.linkedin.com/in/danrashid/">LinkedIn</a>.
-    </p>
-    <p>
-      What you see is intentionally basic and
-      <a href="https://github.com/danrashid/danrashid.github.io">tracker-free</a>, though please,
-      <a href="mailto:dan@danrashid.com" style="text-decoration: none" title="dan@danrashid.com"><u>say “hi!</u>”</a>
-    </p>
-  </main>
-  <footer>
-    <p>
-      <small>
-        © 2001 Dan Rashid<br />Updated
-        <span id="date">Sun 20 Feb 2022 04:15:42 PM CST</span>
-      </small>
-    </p>
-  </footer>
-</body>
-
+        document
+          .getElementById("date")
+          .append(`Updated ${date.toLocaleString()}`);
+      } catch (e) {
+        console.error(e);
+      }
+    </script>
+  </body>
 </html>
