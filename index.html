@@ -39,7 +39,7 @@
       <p>
         <small>
           © 2001 Dan Rashid<br />
-          <span id="date"></span>
+          <span id="date">&nbsp;</span>
         </small>
       </p>
     </footer>
@@ -48,9 +48,9 @@
         const { headers } = await fetch("/");
         const date = new Date(headers.get("last-modified"));
 
-        document
-          .getElementById("date")
-          .append(`Updated ${date.toLocaleString()}`);
+        document.getElementById(
+          "date"
+        ).innerHTML = `Updated ${date.toLocaleString()}`;
       } catch (e) {
         console.error(e);
       }
